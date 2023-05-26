@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.superheroes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.superhero {
+    max-width: 400px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+h3,
+p {
+    text-align: center;
+}
+
+.image {
+
+    margin: auto;
+}
+
+img {
+    max-width: 350px;
+}
+
+.rating {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.rating__item {
+    color: grey;
+    font-size: 32px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.rating__item:hover,
+.rating__item:hover~.rating__item {
+    color: yellow;
+}
+
+.rating[data-total-value="1"] .rating__item:nth-child(n + 5),
+.rating[data-total-value="2"] .rating__item:nth-child(n + 4),
+.rating[data-total-value="3"] .rating__item:nth-child(n + 3),
+.rating[data-total-value="4"] .rating__item:nth-child(n + 2),
+.rating[data-total-value="5"] .rating__item:nth-child(n + 1) {
+    color: yellow;
+}
